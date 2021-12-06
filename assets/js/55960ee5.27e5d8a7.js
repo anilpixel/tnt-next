@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[4121],{88070:e=>{e.exports=JSON.parse('[{"name":"Components","permalink":"/tnt-next/docs/tags/components","count":63}]')}}]);
