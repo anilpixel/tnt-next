@@ -1,0 +1,50 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #126bfb;
+  --ifm-color-primary-dark: #045dee;
+  --ifm-color-primary-darker: #0458e1;
+  --ifm-color-primary-darkest: #0349b9;
+  --ifm-color-primary-light: #2c7cfb;
+  --ifm-color-primary-lighter: #3a84fc;
+  --ifm-color-primary-lightest: #619dfc;
+  --ifm-code-font-size: 95%;
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.playground-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.main-wrapper {
+  display: flex;
+}
+
+body {
+  background-color: var(--ifm-background-color) !important;
+  color: var(--ifm-font-color-base) !important;
+  color-scheme: var(--ifm-color-scheme) !important;
+  font: var(--ifm-font-size-base)/var(--ifm-line-height-base) var(--ifm-font-family-base) !important;
+}
+
+[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
+[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+  color: var(--ifm-heading-color);
+}

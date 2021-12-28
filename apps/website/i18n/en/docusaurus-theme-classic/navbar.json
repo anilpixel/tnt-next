@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "TNT Next",
+    "description": "The title in the navbar"
+  },
+  "item.label.设计": {
+    "message": "设计",
+    "description": "Navbar item with label 设计"
+  },
+  "item.label.组件": {
+    "message": "组件",
+    "description": "Navbar item with label 组件"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

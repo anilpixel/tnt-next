@@ -1,0 +1,12 @@
+{
+  "name": "@tnt-next/illustrations",
+  "version": "0.1.0",
+  "scripts": {
+    "svgr": "svgr --typescript --memo --filename-case kebab --replace-attr-values \"#126bfb={props.color}\" --ref ./src/assets --out-dir ./src/lib"
+  },
+  "main": "dist/illustrations.esm.js",
+  "files": [
+    "dist"
+  ],
+  "typings": "dist/index.d.ts"
+}

@@ -1,0 +1,35 @@
+.illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: @text-color;
+
+  .illustration-description,
+  .illustration-caption {
+    margin: @padding-xs 0 0 0;
+    color: @text-color;
+    font-size: @font-size-base;
+  }
+
+  .illustration-children {
+    margin: @padding-md 0 0 0;
+  }
+
+  :global {
+    .tnt-svg-primary-color {
+      fill: @primary-color;
+      color: @primary-color;
+    }
+
+    .tnt-svg-error-color {
+      fill: @error-color;
+      color: @error-color;
+    }
+
+    .tnt-svg-warning-color {
+      fill: @warning-color;
+      color: @warning-color;
+    }
+  }
+}

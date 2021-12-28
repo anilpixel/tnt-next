@@ -1,0 +1,13 @@
+{
+  "name": "@tnt-next/themes",
+  "version": "0.1.1",
+  "description": "themes for tnt-next",
+  "keywords": [
+    "theme"
+  ],
+  "license": "MIT",
+  "files": [
+    "default",
+    "utils"
+  ]
+}

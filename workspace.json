@@ -1,0 +1,172 @@
+{
+  "version": 2,
+  "projects": {
+    "components": {
+      "root": "libs/components",
+      "sourceRoot": "libs/components/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "build:umd": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "libs/components/dist",
+            "tsConfig": "libs/components/tsconfig.lib.json",
+            "project": "libs/components/package.json",
+            "entryFile": "libs/components/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "libs/components/rollup.config.js",
+            "assets": [
+              {
+                "glob": "libs/components/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/components/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/components"],
+          "options": {
+            "jestConfig": "libs/components/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/react",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "executor": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/react",
+            "outputPath": "dist/storybook/components",
+            "config": {
+              "configFolder": "libs/components/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "illustrations": {
+      "root": "libs/illustrations",
+      "sourceRoot": "libs/illustrations/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "libs/illustrations/dist",
+            "tsConfig": "libs/illustrations/tsconfig.lib.json",
+            "project": "libs/illustrations/package.json",
+            "entryFile": "libs/illustrations/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/illustrations/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/illustrations/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "themes": {
+      "root": "libs/themes",
+      "sourceRoot": "libs/themes/src",
+      "projectType": "library",
+      "tags": [],
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "libs/themes/dist",
+            "tsConfig": "libs/themes/tsconfig.lib.json",
+            "project": "libs/themes/package.json",
+            "entryFile": "libs/themes/src/index.ts",
+            "external": ["react/jsx-runtime"],
+            "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+            "assets": [
+              {
+                "glob": "libs/themes/README.md",
+                "input": ".",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/themes/**/*.{ts,tsx,js,jsx}"]
+          }
+        }
+      }
+    },
+    "website": {
+      "projectType": "application",
+      "root": "apps/website",
+      "sourceRoot": "apps/website/src",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/docusaurus:browser",
+          "options": {
+            "outputPath": "apps/website/dist"
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/docusaurus:dev-server",
+          "options": {
+            "port": 3000
+          }
+        },
+        "deploy": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn docusaurus deploy"
+          }
+        }
+      },
+      "tags": []
+    }
+  }
+}
