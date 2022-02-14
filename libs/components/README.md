@@ -1,7 +1,6 @@
 # components
 
-This library was generated with [Nx](https://nx.dev).
+## Todo
 
-## Running unit tests
-
-Run `nx test components` to execute the unit tests via [Jest](https://jestjs.io).
+1. [ ] 测试用例
+2. [ ] 国际化

@@ -1,6 +1,6 @@
 {
   "name": "@tnt-next/illustrations",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "svgr": "svgr --typescript --memo --filename-case kebab --replace-attr-values \"#126bfb={props.color}\" --ref ./src/assets --out-dir ./src/lib"
   },

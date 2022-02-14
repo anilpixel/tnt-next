@@ -1,9 +1,10 @@
-import { Meta, Story } from '@storybook/react';
+import type { Meta, Story } from '@storybook/react';
+import { Button } from '@tnt-next/components';
 import * as illustrations from '@tnt-next/illustrations';
-import React, { ComponentType } from 'react';
+import type React from 'react';
+import type { ComponentType } from 'react';
 import styled from 'styled-components';
 
-import { Button } from '../../antd-components';
 import { Illustration, IllustrationProps } from './illustration';
 
 const Container = styled.div`
