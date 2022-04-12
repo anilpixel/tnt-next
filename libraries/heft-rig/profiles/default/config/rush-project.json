@@ -1,0 +1,24 @@
+{
+  "operationSettings": [
+    {
+      "operationName": "_phase:build",
+      "outputFolderNames": ["dist", "temp", "etc"]
+    },
+    {
+      "operationName": "build",
+      "outputFolderNames": ["dist", "temp", "etc"]
+    },
+    {
+      "operationName": "build:watch",
+      "outputFolderNames": ["dist", "temp", "etc"]
+    }
+  ],
+  "incrementalBuildIgnoredGlobs": [
+    ".rush",
+    ".heft",
+    "etc",
+    "temp",
+    "dist",
+    "*.build.log"
+  ]
+}

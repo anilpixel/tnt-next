@@ -3,16 +3,20 @@
 # compiled output
 /dist
 /tmp
-/out-tsc
-/**/build
-/**/dist
-libs/components/lib/**
-libs/components/es/**
+**/dist
+**/build
+**/tmp
+**/temp
+**/lib
+**/.rush
+**/.heft
+**/*.build.log
+**/*.error.log
 
 # dependencies
+**/node_modules/
+**/.storybook/node_modules
 /node_modules
-apps/**/node_modules
-libs/**/node_modules
 .yarn
 
 # IDEs and editors
@@ -45,6 +49,16 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Generated Docusaurus files
-.docusaurus/
-.cache-loader/
+# Runtime data
+*.pid
+*.seed
+*.pid.lock
+
+# Rush temporary files
+common/deploy/
+common/temp/
+common/autoinstallers/*/.npmrc
+
+# docusaurus
+.docusaurus
+

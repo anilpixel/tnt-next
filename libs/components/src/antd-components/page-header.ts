@@ -1,1 +1,0 @@
-export { PageHeader } from 'antd';

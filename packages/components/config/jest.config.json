@@ -1,0 +1,3 @@
+{
+  "extends": "@tnt-next/heft-rig/profiles/default/config/jest.config.json"
+}

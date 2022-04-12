@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json.schemastore.org/tsconfig",
+
+  "compilerOptions": {
+    "outDir": "../../../../../dist/lib",
+    "rootDir": "../../../../../src",
+    "baseUrl": "../../../../../",
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "experimentalDecorators": true,
+    "strict": true,
+    "useUnknownInCatchVariables": false,
+    "useDefineForClassFields": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmitOnError": false,
+    "allowUnreachableCode": false,
+    "importsNotUsedAsValues": "error",
+    "types": [],
+    "module": "commonjs",
+    "target": "es2017",
+    "lib": ["es2017", "es2018", "dom"],
+    "skipLibCheck": true
+  },
+  "include": ["../../../../../src/**/*.ts", "../../../../../src/**/*.tsx"]
+}

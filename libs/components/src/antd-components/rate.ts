@@ -1,1 +1,0 @@
-export { Rate } from 'antd';

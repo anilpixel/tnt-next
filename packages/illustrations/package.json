@@ -1,0 +1,37 @@
+{
+  "name": "@tnt-next/illustrations",
+  "version": "0.1.1",
+  "scripts": {
+    "build": "heft build --clean",
+    "build:watch": "heft build",
+    "start": "heft start",
+    "_phase:build": "heft build --clean",
+    "_phase:test": "heft test --no-build",
+    "svgr": "svgr --typescript --memo --filename-case kebab --replace-attr-values \"#126bfb={props.color}\" --ref ./src/assets --out-dir ./src/lib"
+  },
+  "main": "dist/lib/index.js",
+  "files": [
+    "dist"
+  ],
+  "module": "dist/es/index.js",
+  "typings": "dist/lib/index.d.ts",
+  "devDependencies": {
+    "@rushstack/eslint-config": "~2.5.1",
+    "@rushstack/heft": "~0.44.2",
+    "@rushstack/heft-storybook-plugin": "~0.1.33",
+    "@tnt-next/heft-rig": "workspace:*",
+    "@tnt-next/storybook-react-storykit": "workspace:*",
+    "@types/react": "~16.14.23",
+    "@types/react-dom": "~16.9.14",
+    "react": "~16.14.0",
+    "react-dom": "~16.14.0",
+    "eslint-plugin-react-hooks": "~4.3.0",
+    "eslint": "~8.11.0",
+    "eslint-plugin-import": "~2.25.4",
+    "typescript": "~4.6.2"
+  },
+  "peerDependencies": {
+    "react": "16 | 17",
+    "react-dom": "16 | 17"
+  }
+}

@@ -1,14 +1,14 @@
-import React from 'react';
-import clsx from 'clsx';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Translate from '@docusaurus/Translate';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './index.module.css';
+import React from 'react'
+import clsx from 'clsx'
+import Layout from '@theme/Layout'
+import Link from '@docusaurus/Link'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Translate from '@docusaurus/Translate'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import styles from './index.module.css'
 
 export default function Home() {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext()
 
   return (
     <Layout>
@@ -36,5 +36,5 @@ export default function Home() {
         </div>
       </header>
     </Layout>
-  );
+  )
 }

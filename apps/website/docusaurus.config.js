@@ -1,8 +1,7 @@
-// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight');
-const darkCodeTheme = require('prism-react-renderer/themes/palenight');
+const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight')
+const darkCodeTheme = require('prism-react-renderer/themes/palenight')
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,8 +22,19 @@ const config = {
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['en', 'zh-Hans'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      fr: {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-Hans',
+      },
+    },
   },
-
   plugins: [
     [
       'docusaurus-plugin-less',
@@ -38,8 +48,15 @@ const config = {
         },
       },
     ],
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en', 'zh'],
+      },
+    ],
+    './postcss-tailwind-loader',
   ],
-
   presets: [
     [
       '@docusaurus/preset-classic',
@@ -138,6 +155,6 @@ const config = {
         playgroundPosition: 'top',
       },
     }),
-};
+}
 
-module.exports = config;
+module.exports = config

@@ -41,10 +41,15 @@ body {
   background-color: var(--ifm-background-color) !important;
   color: var(--ifm-font-color-base) !important;
   color-scheme: var(--ifm-color-scheme) !important;
-  font: var(--ifm-font-size-base)/var(--ifm-line-height-base) var(--ifm-font-family-base) !important;
+  font: var(--ifm-font-size-base) / var(--ifm-line-height-base)
+    var(--ifm-font-family-base) !important;
 }
 
-[data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3,
-[data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6 {
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
   color: var(--ifm-heading-color);
 }
