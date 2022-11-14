@@ -1,5 +1,5 @@
 {
-  "name": "@tnt-next/heft-rig",
+  "name": "@tntd/heft-rig",
   "version": "0.1.0",
   "description": "A rig package for Node.js projects that build using Heft",
   "license": "UNLICENSED",

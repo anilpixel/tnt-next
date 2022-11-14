@@ -1,94 +1,177 @@
+# `tntd` 同盾前端组件库
+
+`tntd` 是同盾前端团队基于 `antd@3.26.19` 衍生的通用组件库，在不破坏原 `antd` 组件功能的基础上添加符合同盾业务的拓展功能，并落地交互设计规范。为各位前端同学提供开箱即用的组件解决方案。
+
+目前 tntd 具有以下特色：
+
+1. 开箱即用符合设计规范的基础组件，并提供定制化配置参数
+2. 由 `tntd@1.0` 继承而来的业务组件，例如 `QueryListScene`、`QueryForm`、`Layout` 等组件
+
+## 如何开始
+
+项目仓库同时维护组件文档网站及组件本身，采用 monorepo 结构。目录结构如下：
+
+```
+├── apps
+│   └── website // 组件文档网站
+├── libraries // 配置包，例如 storybook 的配置
+└── packages
+    └── tntd // 组件包
+        ├── src
+        │   ├── antd-components // antd 原有组件
+        │   ├── svg-components // svg 图标
+        │   └── table // 自定义组件
+        │   └── query-form // 自定义组件
+        ├── svg // svg 源文件
+        └── themes // 主题
+            ├── default
+```
+
+### 1. 安装 `rush` 作为依赖管理工具。
+
+```shell
+# 安装 `rush` 作为依赖管理工具。
+npm install -g @microsoft/rush
+```
 
 
-# TntNext
+### 2. 开发组件
 
-This project was generated using [Nx](https://nx.dev).
+```shell
+# 检出功能分支
+git checkout -b feature/xxx
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+# 安装依赖
+rush update
 
-🔎 **Smart, Extensible Build Framework**
+# 进入组件开发目录
+cd packages/tntd
 
-## Adding capabilities to your workspace
+# 启动 storybook 进行开发
+npm run start
+```
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+### 3. 修改组件文档
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+```shell
+# 进入文档目录
+cd apps/website
+# 启动服务监听 tntd 的变化
+npm run watch
+# 启动开发服务
+npm run start
+```
 
-Below are our core plugins:
+### 4. 发布
 
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
+```shell
+# 组件发布：在根目录下执行
+sh ./publish.sh
+# 脚本会基于 origin/master 自动生成变更文件，填写版本描述后自动发布
 
-There are also many [community plugins](https://nx.dev/community) you could add.
+# 文档发布：通过 CI/CD 自动进行
 
-## Generate an application
+```
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+### rush 常用命令
 
-> You can use any of the plugins above to generate applications as well.
+```shell
+  # 重新安装依赖
+  rush update
+  # 安装新依赖
+  rush add -p lodash-es -p jest
+  # 安装 dev 依赖
+  rush add -p @types/lodash --dev
+  # 清理 node_modules 以及临时文件
+  rush purge
+  # 扫描 package.json 中是否存在不必要的依赖
+  rush scan
+  # 检查是否有依赖的版本不一致
+  rush check
+```
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+## 编码规范
 
-## Generate a library
+### 组件样式规范
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+组件样式变量应该定义在 `*.module.less`，并尽量使用 `antd` 中定义的原有变量，方便后续在主题配置中进行覆盖。例如：
 
-> You can also use any of the plugins above to generate libraries as well.
+```less
+// table.module.less
+@vertical-padding: 30px;
+@table-padding-vertical-md: @table-padding-vertical * 3 / 4;
 
-Libraries are shareable across libraries and applications. They can be imported from `@tnt-next/mylib`.
+.table {
+  background-color: @white;
+  border-radius: @border-radius-base;
 
-## Development server
+  &.borderless {
+    box-shadow: @table-borderless-shadow;
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+    :global .ant-table-small {
+      border: none;
+    }
+  }
 
-## Code scaffolding
+  &.small {
+    :global {
+      .ant-table-pagination.ant-pagination {
+        padding: @table-padding-vertical-sm @table-padding-horizontal-sm;
+      }
+    }
+  }
+}
+```
+```ts
+// table.tsx
+import styles from 'table.module.less'
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+export const Table = () => (
+  <Table 
+    className={classNames(
+      styles.table,
+      {
+        [styles.borderless]: !bordered,
+        [styles.small]: innerSize === 'small',
+      },
+      className
+    )}
+    />
+)
+```
 
-## Build
+### 国际化
 
-Run `nx build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. 在 `locale/zh_CN.ts`、`locale/en_US.ts` 下添加新的文案：
 
-## Running unit tests
+```ts
+// locale/*.ts
+...
+export const zh_CN = merge(sourceLocale, {
+  NewComponent: {
+    text: '文本',
+  },
+})
+...
 
-Run `nx test my-app` to execute the unit tests via [Jest](https://jestjs.io).
+...
+export const zh_US = merge(sourceLocale, {
+  NewComponent: {
+    text: 'text',
+  },
+})
+...
+```
 
-Run `nx affected:test` to execute the unit tests affected by a change.
+2. 在组件中使用 `LocaleReceiver` 获取国际化文本：
 
-## Running end-to-end tests
+```ts
+import LocaleReceiver from 'antd/es/locale-provider/LocaleReceiver'
 
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
+// 外部可以传入新的 locale 对象来覆盖默认配置
+export const NewComponent = ({ locale }) => (
+  <LocaleReceiver componentName="NewComponent" defaultLocale={locale}>
+    {(locale) => (<span>{locale.text}</span>)}
+  </LocaleReceiver>
+)
+```

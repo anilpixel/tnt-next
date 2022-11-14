@@ -1,5 +1,0 @@
-{
-  "extends": "./node_modules/@tnt-next/heft-rig/profiles/default/tsconfig-base.json",
-  "include": ["src/**/*.ts", "global.d.ts"],
-  "exclude": ["dist"]
-}

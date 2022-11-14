@@ -1679,7 +1679,7 @@ You can combine `forwardRef` with `useImperativeHandle` to get form instance:
 
 ```tsx
 import React, { forwardRef, useImperativeHandle } from 'react';
-import Form, { FormComponentProps } from 'antd/lib/form/Form';
+import Form, { FormComponentProps } from 'antd/es/form/Form';
 
 const FCForm = forwardRef<FormComponentProps, FCFormProps>(({ form, onSubmit }, ref) => {
   useImperativeHandle(ref, () => ({

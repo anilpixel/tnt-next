@@ -1,0 +1,99 @@
+@vertical-padding: 30px;
+// @ref https://github.com/ant-design/ant-design/blob/3.x-stable/components/table/style/size.less
+@table-padding-vertical-md: @table-padding-vertical * 3 / 4;
+@table-padding-horizontal-md: @table-padding-horizontal / 2;
+@table-padding-vertical-sm: @table-padding-vertical / 2;
+@table-padding-horizontal-sm: @table-padding-horizontal / 2;
+@table-borderless-shadow: 0 0 14px rgba(0, 0, 0, 0.08);
+@table-placeholder-min-height: 280px;
+
+.table {
+  background-color: @white;
+  border-radius: @border-radius-base;
+
+  &.borderless {
+    box-shadow: @table-borderless-shadow;
+
+    :global .ant-table-small {
+      border: none;
+    }
+  }
+
+  &.middle {
+    :global {
+      .ant-table-pagination.ant-pagination {
+        padding: @table-padding-vertical-md @table-padding-horizontal-md;
+      }
+    }
+  }
+
+  &.small {
+    :global {
+      .ant-table-pagination.ant-pagination {
+        padding: @table-padding-vertical-sm @table-padding-horizontal-sm;
+      }
+    }
+  }
+
+  :global {
+    // make the loading of table centered
+    .ant-table-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: @table-placeholder-min-height;
+    }
+
+    // customize the loading of table
+    .ant-spin-nested-loading > div > .ant-spin {
+      background-color: @white;
+      max-height: initial;
+
+      .ant-spin-dot {
+        margin: 0;
+        display: initial;
+        font-size: initial;
+        width: initial;
+        height: initial;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    // customize the pagination of table
+    .ant-table-pagination.ant-pagination {
+      width: 100%;
+      text-align: right;
+      margin: 0;
+      padding: @table-padding-vertical @table-padding-horizontal;
+    }
+
+    .ant-pagination-total-text {
+      float: left;
+    }
+
+    // clear the default style when table is small
+    .ant-table-small {
+      .ant-table-content .ant-table-placeholder,
+      .ant-table-content .ant-table-row:last-child td {
+        border-bottom: @border-width-base @border-style-base @border-color-split;
+      }
+
+      > .ant-table-content > .ant-table-body {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.spin-container {
+  position: relative;
+  display: flex;
+
+  .spin-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

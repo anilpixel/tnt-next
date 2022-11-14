@@ -6,7 +6,7 @@
  */
 
 import React from 'react'
-import * as Components from '@tnt-next/components'
+import * as Components from 'tntd'
 import axios from 'axios'
 import { DndProvider, DragSource, DropTarget } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
@@ -24,7 +24,8 @@ import { StickyContainer, Sticky } from 'react-sticky'
 import { TweenOneGroup } from 'rc-tween-one'
 import enUS from 'antd/es/locale/en_US'
 import zhCN from 'antd/es/locale/zh_CN'
-// import '@tnt-next/components/lib/index.less'
+
+import 'tntd/dist/lib/index.less'
 
 // Add react-live imports you need here
 const ReactLiveScope = {

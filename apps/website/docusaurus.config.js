@@ -1,19 +1,16 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/nightOwlLight')
-const darkCodeTheme = require('prism-react-renderer/themes/palenight')
-
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'TNT Next',
-  url: 'https://anilpixel.github.io',
-  baseUrl: '/tnt-next/',
+  title: 'tntd',
+  url: 'https://tnt.tongdun.me/',
+  baseUrl: '/tntd/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
   favicon: 'img/favicon.png',
-  organizationName: 'anilpixel', // Usually your GitHub org/user name.
-  projectName: 'tnt-next', // Usually your repo name.
+  organizationName: 'tntd', // Usually your GitHub org/user name.
+  projectName: 'tntd', // Usually your repo name.
 
   scripts: [
     'https://cdn.jsdelivr.net/npm/@babel/standalone@7.16.4/babel.min.js',
@@ -43,19 +40,19 @@ const config = {
           javascriptEnabled: true,
           math: 'always',
           modifyVars: {
-            hack: 'true; @import "@tnt-next/themes/default/variables.less";',
+            hack: 'true; @import "tntd/themes/default/variables.less";',
           },
         },
       },
     ],
-    [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
-      {
-        hashed: true,
-        language: ['en', 'zh'],
-      },
-    ],
-    './postcss-tailwind-loader',
+    // [
+    //   require.resolve('@easyops-cn/docusaurus-search-local'),
+    //   {
+    //     hashed: true,
+    //     language: ['en', 'zh'],
+    //   },
+    // ],
+    // './postcss-tailwind-loader',
   ],
   presets: [
     [
@@ -138,18 +135,13 @@ const config = {
                 label: '博客',
                 to: '/blog',
               },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/anilpixel/tnt-next',
-              },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()}.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: require('prism-react-renderer/themes/dracula'),
       },
       liveCodeBlock: {
         playgroundPosition: 'top',

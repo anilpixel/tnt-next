@@ -1,0 +1,231 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.playgroundContainer {
+  margin-bottom: var(--ifm-leading);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
+  overflow: hidden;
+}
+
+.playgroundContainer > :global.ant-collapse {
+  border: none;
+
+  > .ant-collapse-item {
+    border: none;
+
+    > .ant-collapse-header {
+      padding: 0 0 0 20px;
+      color: var(--ifm-color-content-inverse);
+      line-height: initial;
+
+      .ant-collapse-arrow {
+        left: 2px;
+      }
+    }
+
+    .ant-collapse-content {
+      margin: 0.75rem -0.75rem -0.75rem;
+      border: none;
+
+      > .ant-collapse-content-box {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.playgroundHeader {
+  letter-spacing: 0.08rem;
+  padding: 0.75rem;
+  background: var(--ifm-color-emphasis-200);
+}
+
+.playgroundHeader:first-of-type {
+  background: var(--ifm-color-emphasis-600);
+  color: var(--ifm-color-content-inverse);
+}
+
+.playgroundEditor {
+  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height)
+    var(--ifm-font-family-monospace) !important;
+  /* rtl:ignore */
+  direction: ltr;
+
+  pre {
+    border-radius: 0;
+  }
+}
+
+.playgroundPreview {
+  padding: 1rem;
+  background-color: #fff;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: initial;
+    font-weight: initial;
+    line-height: initial;
+    margin: initial;
+  }
+
+  img {
+    border-style: initial;
+    box-sizing: initial;
+    max-width: initial;
+  }
+
+  img[align='right'] {
+    padding-left: initial;
+  }
+
+  img[align='left'] {
+    padding-right: initial;
+  }
+
+  ul,
+  ol {
+    margin: initial;
+    padding-left: initial;
+  }
+
+  ol ol,
+  ul ol {
+    list-style-type: initial;
+  }
+
+  ul ul,
+  ul ol,
+  ol ol,
+  ol ul {
+    margin: initial;
+  }
+
+  ul ul ol,
+  ul ol ol,
+  ol ul ol,
+  ol ol ol {
+    list-style-type: initial;
+  }
+
+  table {
+    display: table;
+    margin-bottom: initial;
+    overflow: initial;
+  }
+
+  tr {
+    background-color: initial;
+    border-top: initial;
+  }
+
+  tr:nth-child(2n) {
+    background-color: initial;
+  }
+
+  th,
+  td {
+    color: initial;
+    border: none;
+  }
+
+  strong {
+    font-weight: initial;
+  }
+
+  p {
+    margin: initial;
+  }
+
+  blockquote {
+    border-left: initial;
+    color: initial;
+    font-size: initial;
+    margin: initial;
+    padding: initial;
+  }
+
+  blockquote > :first-child {
+    margin-top: initial;
+  }
+
+  blockquote > :last-child {
+    margin-bottom: initial;
+  }
+
+  /* Horizontal Rules */
+
+  hr {
+    border-color: initial;
+    border-style: initial;
+    border-width: initial;
+    box-sizing: initial;
+    margin: initial;
+    overflow: initial;
+  }
+
+  hr:before {
+    content: initial;
+    display: initial;
+  }
+
+  hr:after {
+    clear: initial;
+    content: initial;
+    display: initial;
+  }
+
+  li + li {
+    margin-top: 0;
+  }
+
+  :global {
+    .react-resizable {
+      position: relative;
+      background-clip: padding-box;
+    }
+
+    .react-resizable-handle {
+      position: absolute;
+      width: 10px;
+      height: 100%;
+      bottom: 0;
+      right: -5px;
+      cursor: col-resize;
+      z-index: 1;
+    }
+  }
+}
+
+:global .ant-calendar,
+:global .ant-fullcalendar {
+  table {
+    display: table;
+    margin-bottom: initial;
+    overflow: initial;
+  }
+
+  tr {
+    background-color: initial;
+    border-top: initial;
+  }
+
+  tr:nth-child(2n) {
+    background-color: initial;
+  }
+
+  th,
+  td {
+    padding: 0;
+    color: initial;
+    border: none;
+  }
+}

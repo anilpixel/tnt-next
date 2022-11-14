@@ -1,6 +1,5 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
-
   "compilerOptions": {
     "outDir": "../../../../../dist/lib",
     "rootDir": "../../../../../src",
@@ -18,13 +17,21 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "noEmitOnError": false,
+    "allowJs": true,
     "allowUnreachableCode": false,
     "importsNotUsedAsValues": "error",
     "types": [],
     "module": "commonjs",
     "target": "es2017",
-    "lib": ["es2017", "es2018", "dom"],
+    "lib": [
+      "es2017",
+      "es2018",
+      "dom"
+    ],
     "skipLibCheck": true
   },
-  "include": ["../../../../../src/**/*.ts", "../../../../../src/**/*.tsx"]
+  "include": [
+    "../../../../../src/**/*.ts",
+    "../../../../../src/**/*.tsx"
+  ]
 }

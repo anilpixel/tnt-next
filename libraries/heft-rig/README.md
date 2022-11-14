@@ -1,4 +1,4 @@
-## @tnt-next/node-rig
+## @tntd/node-rig
 
 A rig package for Node.js projects that build using [Heft](https://www.npmjs.com/package/@rushstack/heft)
 build system. To learn more about rig packages, consult the
@@ -14,6 +14,6 @@ To enable it, add a **rig.json** file to your project, as shown below:
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rig-package/rig.schema.json",
 
-  "rigPackageName": "@tnt-next/heft-rig"
+  "rigPackageName": "@tntd/heft-rig"
 }
 ```

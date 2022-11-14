@@ -1,0 +1,51 @@
+{
+  "name": "tntd",
+  "version": "0.2.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "heft start --storybook",
+    "build": "heft build --clean",
+    "watch": "rush build:watch --changed-projects-only --to-except tntd",
+    "_phase:build": "heft build --clean",
+    "_phase:test": "heft test --no-build",
+    "svgr": "npx svgr --typescript --memo --filename-case kebab --replace-attr-values \"#126bfb={props.color}\" --ref ./svg --out-dir ./src/svg-components"
+  },
+  "dependencies": {
+    "@icon-park/react": "^1.3.5",
+    "@stellaris/hooks": "~0.4.6",
+    "classnames": "~2.3.1",
+    "lodash-es": "~4.17.21"
+  },
+  "devDependencies": {
+    "@react-types/shared": "^3.10.1",
+    "@types/react": "~16.14.23",
+    "@types/react-dom": "~16.9.14",
+    "@types/styled-components": "^5.1.15",
+    "@rushstack/eslint-config": "~2.5.1",
+    "@rushstack/heft": "~0.44.2",
+    "@rushstack/heft-storybook-plugin": "~0.1.91",
+    "@tntd/heft-rig": "workspace:*",
+    "@tntd/storybook-react-storykit": "workspace:*",
+    "antd": "^3.26.19",
+    "react": "~16.14.0",
+    "react-dom": "~16.14.0",
+    "styled-components": "^5.3.3",
+    "eslint-plugin-react-hooks": "~4.3.0",
+    "eslint": "~8.11.0",
+    "eslint-plugin-import": "~2.25.4",
+    "typescript": "~4.6.2",
+    "@types/lodash-es": "~4.17.6"
+  },
+  "peerDependencies": {
+    "antd": "^3.26.19",
+    "react": "16 || 17",
+    "react-dom": "16 || 17"
+  },
+  "files": [
+    "dist",
+    "themes"
+  ],
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
+  "typings": "dist/lib/index.d.ts"
+}
