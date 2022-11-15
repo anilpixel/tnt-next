@@ -12,6 +12,7 @@
 **/.heft
 **/*.build.log
 **/*.error.log
+.eslintcache
 
 # dependencies
 **/node_modules/
